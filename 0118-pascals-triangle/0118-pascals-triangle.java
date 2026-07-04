@@ -3,9 +3,9 @@ class Solution {
         List<List<Integer>> result = new ArrayList<>();
         for(int i=0; i<numRows; i++) {
             List<Integer> row = new ArrayList<>();
-            long ans = 1;
+            int ans = 1;
             for(int j=0; j<=i; j++) {
-                row.add((int)ans);
+                row.add(ans);
                 ans = ans * (i - j);
                 ans = ans / (j + 1);
             }
