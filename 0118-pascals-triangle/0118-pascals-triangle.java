@@ -1,23 +1,16 @@
 class Solution {
     public List<List<Integer>> generate(int numRows) {
-      List<List<Integer>> result = new ArrayList<>();
-
-        for (int i = 0; i < numRows; i++) {
+        List<List<Integer>> result = new ArrayList<>();
+        for(int i=0; i<numRows; i++) {
             List<Integer> row = new ArrayList<>();
-
-            // First and last element of every row is 1
-            for (int j = 0; j <= i; j++) {
-                if (j == 0 || j == i) {
-                    row.add(1);
-                } else {
-                    row.add(result.get(i - 1).get(j - 1) +
-                            result.get(i - 1).get(j));
-                }
+            long ans = 1;
+            for(int j=0; j<=i; j++) {
+                row.add((int)ans);
+                ans = ans * (i - j);
+                ans = ans / (j + 1);
             }
-
             result.add(row);
         }
-
-        return result;  
+        return result;
     }
 }
