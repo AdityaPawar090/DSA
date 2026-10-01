@@ -1,11 +1,13 @@
 class Solution {
     public boolean isValid(String s) {
+
         Stack<Character> s1 = new Stack<>();
 
-        for(int i=0; i<s.length(); i++) {
+        for (int i = 0; i < s.length(); i++) {
+
             char ch = s.charAt(i);
 
-            if(ch == '(' || ch == '[' || ch == '{') {
+            if (ch == '(' || ch == '[' || ch == '{') {
                 s1.push(ch);
             }
             else {
@@ -27,8 +29,7 @@ class Solution {
                 }
             }
         }
-        boolean ans = s1.isEmpty();
 
-        return ans;
+        return s1.isEmpty();
     }
 }
