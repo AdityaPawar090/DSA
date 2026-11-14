@@ -1,6 +1,6 @@
 class Solution {
     public int characterReplacement(String s, int k) {
-       int[] freq = new int[26];
+        int[] freq = new int[26];
         int left = 0;
         int maxFreq = 0;
         int ans = 0;
@@ -18,6 +18,6 @@ class Solution {
             ans = Math.max(ans, right - left + 1);
         }
 
-        return ans; 
+        return ans;
     }
 }
